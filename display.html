@@ -43,7 +43,7 @@
 		}
 
 		body {
-			color: white;
+			color: rgba(255, 0, 0, 0.7);
 			font-size: 50px;
 		}
 
@@ -58,7 +58,7 @@
 
 	<div class="backgroundImage">
 		<video id="backgroundVideo">
-			<source src="background.mp4" type="video/mp4">
+			<source src="dynamite.mp4" type="video/mp4">
 		</video>
 	</div>
 	
@@ -354,7 +354,12 @@
 	}
 
 	window.addEventListener("click", function(){
-		document.querySelector("#backgroundVideo").play();
+		let video = document.querySelector("#backgroundVideo");
+		if (video.paused) {
+			video.play();
+		} else {
+			video.pause();
+		}
 	});
 </script>
 </body>
